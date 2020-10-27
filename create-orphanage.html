@@ -54,12 +54,14 @@
 
             <div class="map-container">
               <div id="mapid"></div>
-                <footer>
-                  <a href="#" id="select-point">
-                    Clique no mapa para adicionar a localização
-                  </a>
-                </footer>
-              </div>
+              <input type="hidden" name="lat" />
+              <input type="hidden" name="lng" />
+              <footer>
+                <a href="#" id="select-point">
+                  Clique no mapa para adicionar a localização
+                </a>
+              </footer>
+            </div>
             <div class="input-block">
               <label for="name">Nome</label>
               <input id="name" name="name" required />
@@ -86,7 +88,7 @@
                     placeholder="Cole o Link da foto aqui"
                     required
                   />
-                  <span>
+                  <span onclick="deleteField(event)">
                     <img
                       src="public/images/remove-files.svg"
                       alt="Remover foto"
@@ -94,7 +96,7 @@
                   </span>
                 </div>
               </div>
-              <button type="button">
+              <button onclick="addPhotoField()" type="button">
                 <img src="./public/images/add-file.svg" alt="Nova Imagem" />
               </button>
             </div>
@@ -120,15 +122,28 @@
               <label for="opening_on_weekends">Atende fim de semana?</label>
               <input
                 type="hidden"
-                id="opening_on_weekends"
-                name="opening_on_weekends"
+                id="open_on_weekends"
+                name="open_on_weekends"
                 values="1"
                 required
               />
 
               <div class="button-select">
-                <button type="button" class="active">Sim</button>
-                <button type="button">Não</button>
+                <button
+                  data-value="1"
+                  onclick="toggleSelect(event)"
+                  type="button"
+                  class="active"
+                >
+                  Sim
+                </button>
+                <button
+                  data-value="0"
+                  onclick="toggleSelect(event)"
+                  type="button"
+                >
+                  Não
+                </button>
               </div>
               <button type="submit" class="primary-button">Confirmar</button>
             </div>

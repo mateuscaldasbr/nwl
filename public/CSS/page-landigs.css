@@ -1,5 +1,9 @@
 #page-landing {
-  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%); /* Transição de cor*/
+  background: linear-gradient(
+    329.54deg,
+    #29b6d1 0%,
+    #00c7c7 100%
+  ); /* Transição de cor*/
   text-align: center;
   min-height: 100vh;
 
@@ -17,7 +21,6 @@ h1,
 .visit p {
   height: 16vh;
 }
-
 
 #logo {
   animation-delay: 50ms;
@@ -43,7 +46,7 @@ main h1 {
 
   border: none;
   border-radius: 3rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,10 +64,11 @@ main h1 {
 /*desktop version */
 
 @media (min-width: 760px) {
-  #container{
+  #container {
     padding: 5rem 2rem;
     /*shorthand background: image repeat  position / size */
-    background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+    background: url("../images/bg.svg") no-repeat 80% /
+      clamp(30rem, 54vw, 56rem);
   }
 
   header {
@@ -84,27 +88,27 @@ main h1 {
     line-height: 1.5;
   }
 
-  main h1{
+  main h1 {
     font-weight: bold;
     line-height: 0.88;
 
     margin: clamp(10%, 9vh, 12%) 0 4rem;
-    width:  min(300px, 80%);
+    width: min(300px, 80%);
   }
 }
 
-.visit{
+.visit {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.visit p{
+.visit p {
   font-size: 2.4rem;
   line-height: 1.5;
   width: clamp(20rem, 20vw, 30rem);
 }
 
-.visit a{
-    margin: initial;
+.visit a {
+  margin: initial;
 }

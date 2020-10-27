@@ -11,14 +11,21 @@
 }
 
 @keyframes right {
-  from { transform: translatex(-100%);}
-  to{ transform: translatex(0);}
-  
+  from {
+    transform: translatex(-100%);
+  }
+  to {
+    transform: translatex(0);
+  }
 }
 
-@keyframes appear{
-  from {opacity: 0;}
-  to {opacity: 1;}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-up {
@@ -29,10 +36,11 @@
 
 .animate-right {
   animation-name: right;
-  animation-duration: 300ms;}
+  animation-duration: 300ms;
+}
 
-  .animate-appear{
-    animation-name: appear;
-    animation-duration: 300ms;
-    animation-fill-mode: backwards;
-  }
+.animate-appear {
+  animation-name: appear;
+  animation-duration: 300ms;
+  animation-fill-mode: backwards;
+}
