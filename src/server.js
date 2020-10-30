@@ -13,8 +13,10 @@ server
 // configurar template engine
 .set('views', path.join(__dirname, 'views'))
 .set('view engine', 'hbs')
-//Criar uma rota
+// rotas da aplicação
 .get('/', pages.index)
-
+.get('/', pages.orphanage)
+.get('/', pages.orphanages)
+.get('/', pages.createOrphanage)
 // ligar o servidor
 server.listen(5500)

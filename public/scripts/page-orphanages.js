@@ -14,7 +14,7 @@ L.tileLayer(
 //Create icon
 
 const icon = L.icon({
-  iconUrl: "./public/images/map-marker.svg",
+  iconUrl: "/images/map-marker.svg",
   iconSize: [58, 68],
   iconAnchor: [29, 68],
   popupAnchor: [170, 2],
@@ -28,7 +28,7 @@ const popup = L.popup({
   minWidth: 240,
   minheight: 240,
 }).setContent(
-  'ICET <a href="orphanage.html?id=1" class="choose-orphanage"> <img src="./public/images/arrow-white.svg"></a>'
+  'ICET <a href="/orphanage?id=1" class="choose-orphanage"> <img src="/images/arrow-white.svg"></a>'
 );
 //Create and add Marker
 L.marker([-3.1442911, -58.4300785], { icon })
