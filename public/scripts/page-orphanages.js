@@ -20,18 +20,31 @@ const icon = L.icon({
   popupAnchor: [170, 2],
 });
 
-//Create popup overlay
+function addMarker({ id, name, lat, lng }) {
+  //Create popup overlay
+  const popup = L.popup({
+    closeButton: false,
+    className: "map-popup",
+    minWidth: 240,
+    minheight: 240,
+  })
+    .setContent(`${name} <a href="/orphanage?id=${id}"><img src="/images/arrow-white.svg" >
+  </a>`);
+  //Create and add Marker
+  L.marker([lat, lng], { icon })
+    .addTo(map)
+    .bindPopup(popup); /*A pretty CSS3 popup.<br> Easily customizable.*/
+  /*.openPopup();*/
+}
 
-const popup = L.popup({
-  closeButton: false,
-  className: "map-popup",
-  minWidth: 240,
-  minheight: 240,
-}).setContent(
-  'ICET <a href="/orphanage?id=1" class="choose-orphanage"> <img src="/images/arrow-white.svg"></a>'
-);
-//Create and add Marker
-L.marker([-3.1442911, -58.4300785], { icon })
-  .addTo(map)
-  .bindPopup(popup); /*A pretty CSS3 popup.<br> Easily customizable.*/
-/*.openPopup();*/
+const orphanagesSpan = document.querySelectorAll(".orphanages span");
+orphanagesSpan.forEach((span) => {
+  const orphanage = {
+    id: span.dataset.id,
+    name: span.dataset.name,
+    lat: span.dataset.lat,
+    lng: span.dataset.lng,
+  };
+
+  addMarker(orphanage);
+});
