@@ -1,15 +1,12 @@
 const Database = require('sqlite-async');
-Database.open(__dirname + '/database.sqlite').then(execute)
 
 function execute(db){
-   console.log('FUNCAO BD OK')
-    /* db.exec(`
-        CREATE TABLE IF NOT EXIST orphanages (
+   return db.exec(`
+        CREATE TABLE IF NOT EXISTS orphanages (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             lat TEXT,
             lng TEXT,
             name TEXT,
-            about TEXT,
             about TEXT,
             whatsapp TEXT,
             images TEXT,
@@ -18,5 +15,6 @@ function execute(db){
             open_on_weekends TEXT
         );
 
-    `) */
+    `)
 } 
+module.exports = Database.open(__dirname + '/database.sqlite').then(execute) // resultado DB
