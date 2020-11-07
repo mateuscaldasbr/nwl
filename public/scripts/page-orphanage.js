@@ -29,7 +29,10 @@ const icon = L.icon({
 });
 
 //Create and add Marker
-L.marker([-3.1442911, -58.4300785], { icon }).addTo(map);
+const spanLat = document.querySelector('span[data-lat]');
+const spanLng = document.querySelector('span[data-lng]');
+
+L.marker([spanLat.dataset.lat, spanLng.dataset.lng], { icon }).addTo(map);
 
 /*Image Galery */
 
